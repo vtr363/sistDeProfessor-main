@@ -1,7 +1,7 @@
 import { Disciplina } from "./disciplina";
 
 export interface Curso {
-  id: number;
-  curso_nome: string;
+  cursoId: number;
+  cursoNome: string;
   disciplinas: Disciplina[];
 }

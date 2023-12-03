@@ -1,9 +1,9 @@
 import { Usuario } from "./usuario";
 
 export interface Disciplina {
-  id: string;
-  disciplina_nome: string;
-  trimestre: number;
-  disciplina_carga: number; // Cada disciplina tem carga de 2 horas.
+  disciplinaId: string;
+  disciplinaNome: string;
+  disciplinaCarga: number; // Cada disciplina tem carga de 2 horas.
+  trimestre: string;
   usuarios: Usuario[];
 }

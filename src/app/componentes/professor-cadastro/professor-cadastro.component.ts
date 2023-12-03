@@ -34,8 +34,8 @@ export class ProfessorCadastroComponent implements OnInit {
   usuarioEmail: string = '';
   professorCarga: number = 40;
   tipoContratacao: string = '';
-  curso: Curso = { id: 0, curso_nome: '', disciplinas: [] };
-  curEscolhidos: Disciplina[] = [];
+  curso: Curso = { cursoId: 0, cursoNome: '', disciplinas: [] };
+  disciplinas: Disciplina[] = [];
 
   constructor(private snackBar: MatSnackBar,
     private professorService: ProfessorService,
@@ -63,7 +63,7 @@ export class ProfessorCadastroComponent implements OnInit {
       this.disciplinasDoCurso = this.curso.disciplinas;
     } else {
       this.disciplinasDoCurso = [];
-      this.curEscolhidos = [];
+      this.disciplinas = [];
     }
   }
 
@@ -105,8 +105,8 @@ export class ProfessorCadastroComponent implements OnInit {
       professorCarga: this.professorCarga,
       tipoContratacao: this.tipoContratacao,
       tipoUsuario: "PROFESSOR",
-      curEscolhidos: this.curso?.curso_nome.toString,
-      discEscolhidas: this.curEscolhidos.map(d => d.disciplina_nome),
+      curEscolhidos: this.curso?.cursoNome,
+      discEscolhidos: this.disciplinas.map(d => d.disciplinaNome),
     };
     
 
@@ -143,7 +143,7 @@ export class ProfessorCadastroComponent implements OnInit {
     }
 
     // Validar o campo de Disciplinas
-    if (!this.curEscolhidos || this.curEscolhidos.length === 0) {
+    if (!this.disciplinas || this.disciplinas.length === 0) {
       this.exibirMensagemErro('Por favor, selecione pelo menos uma disciplina.');
       return;
     }
@@ -185,8 +185,8 @@ export class ProfessorCadastroComponent implements OnInit {
     this.tipoContratacao = '';
     this.usuarioEmail = '';
     this.professorCarga = 40;
-    this.curso = { id: 0, curso_nome: '', disciplinas: [] };
-    this.curEscolhidos = [];
+    this.curso = { cursoId: 0, cursoNome: '', disciplinas: [] };
+    this.disciplinas = [];
     this.disciplinasDoCurso = [];
 
     this.snackBar.open('Os campos foram limpos.', 'Fechar', {

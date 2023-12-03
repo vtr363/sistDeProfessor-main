@@ -51,7 +51,7 @@
       <mat-label>Curso</mat-label>
       <mat-select [(ngModel)]="curso" (selectionChange)="cursoSelecionado()">
         <mat-option *ngFor="let cursoDisponivel of cursosDisponiveis" [value]="cursoDisponivel">
-          {{ cursoDisponivel.curso_nome }}
+          {{ cursoDisponivel.cursoNome }}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -59,10 +59,10 @@
 
     <mat-form-field class="custom-form-field">
       <mat-label>Disciplinas</mat-label>
-      <mat-select [(ngModel)]="curEscolhidos" multiple *ngIf="curso"
+      <mat-select [(ngModel)]="disciplinas" multiple *ngIf="curso"
         [disabled]="!curso || disciplinasDoCurso.length === 0">
         <mat-option *ngFor="let disciplinaDisponivel of disciplinasDoCurso" [value]="disciplinaDisponivel">
-          {{ disciplinaDisponivel.disciplina_nome }}
+          {{ disciplinaDisponivel.disciplinaNome}}
         </mat-option>
       </mat-select>
     </mat-form-field>
