@@ -11,34 +11,46 @@ import { ProfessorCadastroComponent } from './componentes/professor-cadastro/pro
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule }  from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { CursoService } from './services/curso.service';
+import { ViewCoordenadorComponent } from './componentes/view-coordenador/view-coordenador.component';
+
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    ViewCoordenadorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CommonModule,
-
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-
     ProfessorCadastroComponent,
-
     MatSelectModule,
     MatFormFieldModule,
     MatButtonModule,
     MatSnackBarModule,
+    MatToolbarModule,
+    MatDialogModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatInputModule
   ],
   providers: [CursoService],
   bootstrap: [AppComponent]

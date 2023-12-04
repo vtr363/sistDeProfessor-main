@@ -5,5 +5,5 @@ export interface Disciplina {
   disciplinaNome: string;
   disciplinaCarga: number; // Cada disciplina tem carga de 2 horas.
   trimestre: string;
-  usuarios: Usuario[];
+  usuario: Usuario;
 }
