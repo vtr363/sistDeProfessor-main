@@ -1,103 +1,121 @@
+
+
 {
-  "cursos": [
+  "usuarios": [
     {
-      "cursoNome": "Análise e Desenvolvimento de Sistemas",
-      "disciplinas": [
-        {
-          "disciplinaNome": "Lógica de Programação",
-          "trimestre": "1",
-          "disciplinaCarga": 2,
-          "id": 1
-        },
-        {
-          "disciplinaNome": "Programação 1",
-          "trimestre": "1",
-          "disciplinaCarga": 2,
-          "id": 2
-        },
-        {
-          "disciplinaNome": "Programação 2",
-          "trimestre": "1",
-          "disciplinaCarga": 2,
-          "id": 3
-        }
-      ],
-      "id": 1
+      "usuarioId": 1,
+      "usuarioNome": "John Doe",
+      "usuarioCpf": "123.456.789-01",
+      "usuarioEmail": "john.doe@example.com",
+      "professorCarga": 20,
+      "curEscolhidos": ["Computer Science"],
+      "discEscolhidas": ["Programming 101"],
+      "tipoContratacao": "integral",
+      "tipoUsuario": "Professor"
     },
     {
-      "cursoNome": "Redes de Computadores",
-      "disciplinas": [
-        {
-          "disciplinaNome": "Introdução a Redes de Computadores",
-          "trimestre": "1",
-          "disciplinaCarga": 2,
-          "id": 4
-        },
-        {
-          "disciplinaNome": "Web Security",
-          "trimestre": "1",
-          "disciplinaCarga": 2,
-          "id": 5
-        },
-        {
-          "disciplinaNome": "Arquitetura de Computadores",
-          "trimestre": "1",
-          "disciplinaCarga": 2,
-          "id": 6
-        }
-      ],
-      "id": 2
+      "usuarioId": 2,
+      "usuarioNome": "Jane Doe",
+      "usuarioCpf": "987.654.321-09",
+      "usuarioEmail": "jane.doe@example.com",
+      "professorCarga": 15,
+      "curEscolhidos": ["Mathematics"],
+      "discEscolhidas": ["Calculus"],
+      "tipoContratacao": "parcial",
+      "tipoUsuario": "Coordenador"
     }
   ],
   "disciplinas": [
     {
-      "disciplinaNome": "Lógica de Programação",
-      "trimestre": "1",
+      "disciplinaId": 1,
+      "disciplinaNome": "Programming 101",
       "disciplinaCarga": 2,
-      "id": 1
+      "trimestre": "1",
+      "usuarios": [
+        {
+          "usuarioId": 1,
+          "usuarioNome": "John Doe",
+          "usuarioCpf": "123.456.789-01",
+          "usuarioEmail": "john.doe@example.com",
+          "professorCarga": 20,
+          "curEscolhidos": ["Computer Science"],
+          "discEscolhidas": ["Programming 101"],
+          "tipoContratacao": "integral",
+          "tipoUsuario": "Professor"
+        }
+      ]
     },
     {
-      "disciplinaNome": "Programação 1",
-      "trimestre": "1",
+      "disciplinaId": 2,
+      "disciplinaNome": "Calculus",
       "disciplinaCarga": 2,
-      "id": 2
-    },
-    {
-      "disciplinaNome": "Programação 2",
-      "trimestre": "1",
-      "disciplinaCarga": 2,
-      "id": 3
-    },
-    {
-      "disciplinaNome": "Introdução a Redes de Computadores",
-      "trimestre": "1",
-      "disciplinaCarga": 2,
-      "id": 4
-    },
-    {
-      "disciplinaNome": "Web Security",
-      "trimestre": "1",
-      "disciplinaCarga": 2,
-      "id": 5
-    },
-    {
-      "disciplinaNome": "Arquitetura de Computadores",
-      "trimestre": "1",
-      "disciplinaCarga": 2,
-      "id": 6
+      "trimestre": "Spring",
+      "usuarios": [
+        {
+          "usuarioId": 2,
+          "usuarioNome": "Jane Doe",
+          "usuarioCpf": "987.654.321-09",
+          "usuarioEmail": "jane.doe@example.com",
+          "professorCarga": 15,
+          "curEscolhidos": ["Mathematics"],
+          "discEscolhidas": ["Calculus"],
+          "tipoContratacao": "parcial",
+          "tipoUsuario": "Coordenador"
+        }
+      ]
     }
   ],
-  "professores": {
-    "usuarioNome": "mckz",
-    "usuarioCpf": "916.714.750.03",
-    "usuarioEmail": "mckz@gmail.com",
-    "professorCarga": 40,
-    "tipoContratacao": "PARCIAL",
-    "tipoUsuario": "PROFESSOR",
-    "curso": "Análise e Desenvolvimento de Sistemas",
-    "disciplinas": [
-      "Lógica de Programação",
-      "Programação 1"
-    ]
-  }
+  "cursos": [
+    {
+      "cursoId": 1,
+      "cursoNome": "Computer Science",
+      "disciplinas": [
+        {
+          "disciplinaId": "001",
+          "disciplinaNome": "Programming 101",
+          "disciplinaCarga": 2,
+          "trimestre": "2",
+          "usuarios": [
+            {
+              "usuarioId": 1,
+              "usuarioNome": "John Doe",
+              "usuarioCpf": "123.456.789-01",
+              "usuarioEmail": "john.doe@example.com",
+              "professorCarga": 20,
+              "curEscolhidos": ["Computer Science"],
+              "discEscolhidas": ["Programming 101"],
+              "tipoContratacao": "integral",
+              "tipoUsuario": "Professor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cursoId": 2,
+      "cursoNome": "Mathematics",
+      "disciplinas": [
+        {
+          "disciplinaId": 2,
+          "disciplinaNome": "Calculus",
+          "disciplinaCarga": 2,
+          "trimestre": "Spring",
+          "usuarios": [
+            {
+              "usuarioId": 2,
+              "usuarioNome": "Jane Doe",
+              "usuarioCpf": "987.654.321-09",
+              "usuarioEmail": "jane.doe@example.com",
+              "professorCarga": 15,
+              "curEscolhidos": ["Mathematics"],
+              "discEscolhidas": ["Calculus"],
+              "tipoContratacao": "parcial",
+              "tipoUsuario": "Coordenador"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
+

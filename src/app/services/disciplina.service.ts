@@ -7,27 +7,27 @@ import { Disciplina } from '../modelos/disciplina';
   providedIn: 'root'
 })
 export class DisciplinaService {
-  constructor(private _http: HttpClient) {}
+constructor(private _http: HttpClient) {}
 
-  private apiUrl = 'http://localhost:8080/api/disciplina';
+private apiUrl = 'http://localhost:8080/api/disciplina';
 
-  adicionarDisciplina(data: Disciplina): Observable<any> {
-    return this._http.post(this.apiUrl, data);
-  }
+adicionarDisciplina(data: Disciplina): Observable<any> {
+  return this._http.post(this.apiUrl, data);
+}
 
-  atualizarDisciplina(id: number, data: Disciplina): Observable<any> {
-    return this._http.put<Disciplina>(`${this.apiUrl}/${id}`, data);
-  }
+atualizarDisciplina(id: number, data: Disciplina): Observable<any> {
+  return this._http.put<Disciplina>(`${this.apiUrl}/${id}`, data);
+}
 
-  getDisciplinaList(): Observable<any> {
-    return this._http.get<Disciplina[]>(this.apiUrl);
-  }
+getDisciplinaList(): Observable<any> {
+  return this._http.get<Disciplina[]>(this.apiUrl);
+}
 
-  getDisciplinas(): Observable<Disciplina[]> {
-    return this._http.get<Disciplina[]>(this.apiUrl);
-  }
+deletarDisciplina(id: number): Observable<any> {
+  return this._http.delete(`${this.apiUrl}/${id}`);
+}
 
-  deletarDisciplina(id: number): Observable<any> {
-    return this._http.delete(`${this.apiUrl}/${id}`);
-  }
+getDisciplina(id: number): Observable<any> {
+  return this._http.get<Disciplina>(`${this.apiUrl}/${id}`);
+}
 }
